@@ -3,15 +3,11 @@ const {
   BrowserWindow
 } = require('electron');
 
-
-let win;
-
 app.on('ready', () => {
-
-    win = new BrowserWindow({
+    const win = new BrowserWindow({
         width: 800,
         height: 600,
-        frame: false,
+        frame: false
     });
 
     win.loadURL(`file:///${__dirname}/index.html`);
@@ -19,5 +15,4 @@ app.on('ready', () => {
     win.on('closed', () => {
         win = null;
     });
-
 });
