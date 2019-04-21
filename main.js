@@ -4,11 +4,13 @@ const {
 } = require('electron');
 
 app.on('ready', () => {
-    const win = new BrowserWindow({
+    let win = new BrowserWindow({
         width: 800,
         height: 600,
         frame: false
     });
+
+    win.webContents.session.setProxy({ pr });
 
     win.loadURL(`file:///${__dirname}/index.html`);
 
