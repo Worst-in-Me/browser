@@ -10,8 +10,6 @@ app.on('ready', () => {
         frame: false
     });
 
-    win.webContents.session.setProxy({ pr });
-
     win.loadURL(`file:///${__dirname}/index.html`);
 
     win.on('closed', () => {
