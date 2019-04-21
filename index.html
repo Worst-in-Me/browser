@@ -3,21 +3,22 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="chrome-like.css">
+    <link rel="stylesheet" href="popup.css">
     <title>UGANDA</title>
   </head>
   <body>
+    <div class="popup">
+      <form class="form" action="">
+        <label for="proxy">Proxy</label>
+        <input type="text" id="proxy">
+        <input type="submit" id="submit">
+      </form>
+    </div>
+    <div class="shade"></div>
+    <div class="opts">Opts</div>
     <div id="nav-body-ctrls"></div>
     <div id="nav-body-tabs"></div>
     <div id="nav-body-views"></div>
-
-    <script>
-      const enav = new (require('electron-navigation'))({
-
-      });
-      require('./renderer.js')
-
-      
-
-    </script>
+    <script>require('./renderer.js');</script>
   </body>
 </html>

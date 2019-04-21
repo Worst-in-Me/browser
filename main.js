@@ -3,21 +3,18 @@ const {
   BrowserWindow
 } = require('electron');
 
-
-let win;
-
 app.on('ready', () => {
-
-    win = new BrowserWindow({
+    let win = new BrowserWindow({
         width: 800,
         height: 600,
-        frame: false,
+        frame: false
     });
+
+    win.webContents.session.setProxy({ pr });
 
     win.loadURL(`file:///${__dirname}/index.html`);
 
     win.on('closed', () => {
         win = null;
     });
-
 });
